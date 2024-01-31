@@ -5,6 +5,13 @@ def greet(name):
     # This function greets the user
     print(f"Hello, {name}!")
 
+'''
+adding
+three
+
+lines
+'''
+
 # Main function
 def main():
     # Get user input
