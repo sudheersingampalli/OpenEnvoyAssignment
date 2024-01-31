@@ -5,8 +5,10 @@ class LineCounter(ABC):
         self.file_path = file_path
         self.blank_lines = 0
         self.comment_lines = 0
+        self.multi_comment_lines = 0
         self.code_lines = 0
         self.total_lines = 0
+        self.multiline_start = False
 
     def count_lines(self):
         with open(self.file_path, 'r') as file:
@@ -24,6 +26,7 @@ class LineCounter(ABC):
 
     def print_results(self):
         print(f'Blank: {self.blank_lines}')
-        print(f'Comments: {self.comment_lines}')
+        print(f'SingleComments: {self.comment_lines}')
+        print(f'MultiLineComments: {self.multi_comment_lines}')
         print(f'Code: {self.code_lines}')
         print(f'Total: {self.total_lines}')
